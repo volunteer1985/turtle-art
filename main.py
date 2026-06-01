@@ -1,16 +1,27 @@
-# This is a sample Python script.
+from turtle import Turtle, Screen
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def move_and_turn_left(distance, turn_degree):
+    tortilla.forward(distance)
+    tortilla.left(turn_degree)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def draw_a_square(side_length):
+    move_and_turn_left(side_length, 90)
+    move_and_turn_left(side_length, 90)
+    move_and_turn_left(side_length, 90)
+    move_and_turn_left(side_length, 90)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+tortilla = Turtle()
+tortilla.shape("turtle")
+tortilla.color("deep pink")
+
+draw_a_square(100)
+
+
+
+
+
+
+my_screen = Screen()
+my_screen.exitonclick()
