@@ -40,13 +40,10 @@ def draw_a_polygon(corners, length):
         move_and_turn_left(length, 360 / corners)
 
 def draw_multiple_polygons(up_to_angles, side):
-    color_code = 0
     start_angles = 3
-    while up_to_angles >= start_angles:
-        tortilla.color(colors[color_code])
-        draw_a_polygon(start_angles, side)
-        start_angles += 1
-        color_code += 1
+    for i in range(3, up_to_angles + 1):
+        tortilla.color(random.choice(colors))
+        draw_a_polygon(i, side)
 
 
 
@@ -56,7 +53,7 @@ tortilla.shape("turtle")
 tortilla.color("deep pink")
 
 
-draw_multiple_polygons(10, 50)
+draw_multiple_polygons(75, 10)
 
 
 
