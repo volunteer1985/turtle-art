@@ -1,6 +1,8 @@
 import random
-import turtle
 from turtle import Turtle, Screen
+
+colors = ["dark olive green", "medium slate blue", "red", "green", "cyan",
+          "slate gray", "black", "gold"]
 def get_random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
@@ -38,10 +40,13 @@ def draw_a_polygon(corners, length):
         move_and_turn_left(length, 360 / corners)
 
 def draw_multiple_polygons(up_to_angles, side):
+    color_code = 0
     start_angles = 3
     while up_to_angles >= start_angles:
+        tortilla.color(colors[color_code])
         draw_a_polygon(start_angles, side)
         start_angles += 1
+        color_code += 1
 
 
 
@@ -51,7 +56,7 @@ tortilla.shape("turtle")
 tortilla.color("deep pink")
 
 
-draw_multiple_polygons(50, 10)
+draw_multiple_polygons(10, 50)
 
 
 
