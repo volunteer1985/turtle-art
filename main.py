@@ -51,6 +51,13 @@ def draw_random_walk(step_width, steps):
         tortilla.color(get_random_color())
         move_and_turn(step_width, random.choice(turns))
 
+def draw_spirograph(radius, tilt):
+    for i in range(int(360 / tilt)):
+        tortilla.color(get_random_color())
+        tortilla.circle(radius)
+        tortilla.left(tilt)
+
+
 
 
 
@@ -61,7 +68,8 @@ tortilla.color("deep pink")
 
 
 #draw_multiple_polygons(75, 10)
-draw_random_walk(20, 400)
+#draw_random_walk(20, 400)
+draw_spirograph(100, 2)
 
 
 
