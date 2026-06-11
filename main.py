@@ -1,14 +1,12 @@
 import random
-from turtle import Turtle, Screen
+import turtle as t
 
-colors = ["dark olive green", "medium slate blue", "red", "green", "cyan",
-          "slate gray", "black", "gold"]
-turns = [0, 90, 180, 270,]
 def get_random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
-    return r, g, b
+    color_tuple = (r, g, b)
+    return color_tuple
 
 def draw_a_line(distance):
     tortilla.pendown()
@@ -43,29 +41,31 @@ def draw_a_polygon(corners, length):
 def draw_multiple_polygons(up_to_angles, side):
     start_angles = 3
     for i in range(3, up_to_angles + 1):
-        tortilla.color(random.choice(colors))
+        tortilla.color(get_random_color())
         draw_a_polygon(i, side)
 
 def draw_random_walk(step_width, steps):
-    tortilla.width(10)
+    turns = [0, 90, 180, 270, ]
+    tortilla.width(20)
     for _ in range(steps):
-        tortilla.color(random.choice(colors))
+        tortilla.color(get_random_color())
         move_and_turn(step_width, random.choice(turns))
 
 
 
 
-tortilla = Turtle()
+tortilla = t.Turtle()
+t.colormode(255)
 tortilla.shape("turtle")
 tortilla.color("deep pink")
 
 
 #draw_multiple_polygons(75, 10)
-draw_random_walk(20, 200)
+draw_random_walk(20, 400)
 
 
 
 
 
-my_screen = Screen()
+my_screen = t.Screen()
 my_screen.exitonclick()
